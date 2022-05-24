@@ -1,9 +1,21 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import logo from '../assets/logo.svg'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  const login = useCallback(async () => {
+    try {
+      const res = await window.api.login({
+        email: '',
+        password: ''
+      })
+      console.log(res)
+    } catch (error) {
+      console.log(error)
+    }
+  }, [])
 
   return (
     <div className="App">
@@ -13,6 +25,9 @@ function App() {
         <p>
           <button type="button" onClick={() => setCount(count => count + 1)}>
             count is: {count}
+          </button>
+          <button type="button" onClick={login}>
+            登录
           </button>
         </p>
         <p>

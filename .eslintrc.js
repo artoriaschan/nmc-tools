@@ -7,11 +7,7 @@ module.exports = {
     'no-unused-vars': ['error', { varsIgnorePattern: '.*', args: 'none' }],
     // most of the codebase are expected to be env agnostic
     'no-restricted-globals': ['error'],
-    'no-restricted-syntax': [
-      'error',
-      'ObjectPattern > RestElement',
-      'AwaitExpression'
-    ]
+    'no-restricted-syntax': ['error']
   },
   overrides: [
     {

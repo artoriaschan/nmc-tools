@@ -1,4 +1,9 @@
 import type { ElectronNodejsAPI } from './main/bridge/node.ts'
-interface Window {
-  nodejs: ElectronNodejsAPI
+import type { ElectronFetchApi } from './main/api'
+
+declare global {
+  interface Window {
+    api: ElectronFetchApi
+    nodejs: ElectronNodejsAPI
+  }
 }

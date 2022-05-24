@@ -6,7 +6,7 @@ const createWindow = () => {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, './bridge/index.js'),
+      preload: path.join(__dirname, './preload.js'),
       contextIsolation: true // 上下文隔离
     }
   })
